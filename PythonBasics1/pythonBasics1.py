@@ -22,9 +22,12 @@ def starts_with(s, char):
 # For our purposes, a consonant is any letter other than A, E, I, O, U)
 # Your solution should work for both upper and lower cases 
 def starts_with_vowel(s):
-  # YOUR CODE HERE
-  
-  return
+  if (len(s) != 0):
+    if s[0].lower() == 'a' or 'e' or 'i' or 'o' or 'u':
+      return True
+    else:
+      return False
+  return 0
 
 # Part C. max_min_sum
 # Define a function max_min_sum(arr) that takes an array and returns the sum
