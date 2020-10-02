@@ -8,7 +8,11 @@
 # Define a function starts_with(s, char) that takes a string and a character
 # and returns true if the string starts with that character and false otherwise. 
 def starts_with(s, char):
-  # YOUR CODE HERE
+  if (len(s) != 0 and len(char) != 0):
+    return s[0] == char
+  if (len(s) == 0 and len(char) == 0):
+    return True
+  return 0
   
   return
 
