@@ -16,8 +16,8 @@ def test(got, expected):
 # Calls the functions in pythonBasics3 with interesting inputs.
 def main():
     # set which functions to test
-    starts_with_number = True
-    starts_with_consonant = False
+    starts_with_number = False
+    starts_with_consonant = True
     binary_multiple_of_4 = False
 
     if starts_with_number:

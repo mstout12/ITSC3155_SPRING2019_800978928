@@ -13,7 +13,6 @@ import re
 # (For our purposes, a number is any character that is 0,1,2,3,4,5,6,7,8, or 9.)
 # Note: Be sure to use RegEx!
 def starts_with_number(s):
-
   if (len(s) != 0 ):
     if (re.search('^[0-9]', s)):
       return True
@@ -25,9 +24,12 @@ def starts_with_number(s):
 # (For our purposes, a consonant is any letter other than A, E, I, O, U.)
 # Note: Be sure to use RegEx and it works for both upper and lower case and for nonletters!
 def starts_with_consonant(s):
-  # YOUR CODE HERE
-
-  return
+  if re.search('^[0-9]', s):
+    return False
+  if len(s) != 0:
+    if re.search('^[aeiouAEIOU]', s):
+      return False
+  return True
 
 
 # Part C. binary_multiple_of_4
