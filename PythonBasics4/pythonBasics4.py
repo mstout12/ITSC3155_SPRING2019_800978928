@@ -6,9 +6,10 @@
 
 # # Part A.
 def array_2_dict(emails, contacts):
-    # YOUR CODE HERE
-
-    return
+    names = list(contacts.keys())
+    for i in range(len(emails)):
+        contacts[names[i]] = emails[i]
+    return contacts
 
 # # Part B.
 def array2d_2_dict(contact_info, contacts):
