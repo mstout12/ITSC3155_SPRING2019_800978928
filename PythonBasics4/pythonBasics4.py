@@ -13,9 +13,21 @@ def array_2_dict(emails, contacts):
 
 # # Part B.
 def array2d_2_dict(contact_info, contacts):
-    # YOUR CODE HERE
-
-    return
+    contactKeys = list(contacts.keys())
+    tmp = []
+    key = 0
+    for i in contact_info:
+        info = {}
+        tmp = i
+        for x in range(len(i)):
+            if (x == 0):
+                info["email"] = tmp[x]
+            else:
+                info["phone"] = tmp[x]
+        print(contacts[contactKeys[key]])
+        contacts[contactKeys[key]] = info
+        key += 1
+    return contacts
 
 # # Part C.
 def dict_2_array(contacts):
