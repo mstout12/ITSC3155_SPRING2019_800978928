@@ -1,3 +1,5 @@
+import datetime
+
 from database import db
 
 class Note(db.Model):
@@ -5,17 +7,26 @@ class Note(db.Model):
     title = db.Column("title", db.String(200))
     text = db.Column("text", db.String(100))
     date = db.Column("date", db.String(50))
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
 
-    def __init__(self, title, text, date):
+    def __init__(self, title, text, date, user_id):
         self.title = title
         self.text = text
         self.date = date
+        self.user_id = user_id
 
 class User(db.Model):
     id = db.Column("id", db.Integer, primary_key=True)
-    name = db.Column("name", db.String(100))
-    email = db.Column("email", db.String(100))
+    first_name = db.Column("first_name", db.String(100))
+    last_name = db.Column("last_name", db.String(100))
+    email = db.Column("email", db.String(50))
+    password = db.Column(db.String(255), nullable = False)
+    registered_on = db.Column(db.DateTime, nullable = False)
+    note = db.relationship("Note", backref="note", lazy = True)
 
-    def __init__(self, name, email):
-        self.name = name
+    def __init__(self, first_name, last_name, password, email):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.password = password
         self.email = email
+        self.registered_on = datetime.date.today()
